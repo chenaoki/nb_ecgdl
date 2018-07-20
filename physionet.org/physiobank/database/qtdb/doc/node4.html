@@ -1,0 +1,1396 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.2 beta6 (August 14th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>The Records</TITLE>
+<META NAME="description" CONTENT="The Records">
+<META NAME="keywords" CONTENT="cinc97">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="cinc97.css">
+<LINK REL="next" HREF="node5.html">
+<LINK REL="previous" HREF="node3.html">
+<LINK REL="up" HREF="cinc97.shtml">
+<LINK REL="next" HREF="node5.html">
+</HEAD>
+<BODY bgcolor="white">
+<B> Next:</B> <A NAME="tex2html53"
+ HREF="node5.html">Manual Annotations</A>
+<B>Up:</B> <A NAME="tex2html51"
+ HREF="cinc97.shtml">A Database for Evaluation of Algorithms for</A>
+<B> Previous:</B> <A NAME="tex2html45"
+ HREF="node3.html">The QT Database</A>
+<BR> <P>
+
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00040000000000000000">
+The Records</A>
+</H1>
+
+<P>
+The records are provided in the MIT-BIH Database format.  QT Database
+records have record names of the form <TT>sel</TT><EM>nnnn</EM>, where <EM>nnnn</EM> is the name of the original record in the source database.  Each
+record includes a signal file (<EM>record</EM>.<TT>dat</TT>, where <EM>record</EM> is the record name), a header file (<EM>record</EM>.<TT>hea</TT>,
+describing the format of the signal file), and several annotation
+files: <EM>record</EM>.<TT>atr</TT> contains the original annotations from
+the source database; <EM>record</EM>.<TT>ari</TT> contains QRS annotations
+obtained automatically by A<SMALL>RISTOTLE</SMALL>[<A
+ HREF="node6.html#aristotle">5</A>]; <EM>record</EM>.<TT>pu0</TT> and <EM>record</EM>.<TT>pu1</TT> contain the automatic
+waveform onsets and ends in signals 0 and 1 respectively, as detected
+using the differentiated threshold method by <TT>ecgpuwave</TT>[<A
+ HREF="node6.html#articulo_puntos">6</A>]; and <EM>record</EM>.<TT>man</TT>, <EM>record</EM>.<TT>qt</TT><EM>n</EM>, and <EM>record</EM>.<TT>q</TT><EM>n</EM><TT>c</TT>
+contain the manual annotations, as described in the next section, for
+annotators <EM>n</EM>=1,2.  The <EM>record</EM>.<TT>atr</TT> files do not exist
+for the 24 sudden death records, since no reference annotations were
+available in this case.  A<SMALL>RISTOTLE</SMALL> classifies the detected beats
+as normal (N) or belonging to other beat types[<A
+ HREF="node6.html#aristotle">5</A>].  Those
+beats considered normal are clustered into different groups specified
+by the <TT>num</TT> fields of the <TT>ari</TT> annotations.  In the <TT>num</TT> fields of the <TT>pu*</TT> annotations, <TT>ecgpuwave</TT> classifies
+the T waves as normal (0), inverted (1), only upwards (2), only
+downwards (3), biphasic negative-positive (4), or biphasic
+positive-negative (5).  Waveform onset ``('' and end ``)'' annotations
+specify the waveform type in their <TT>num</TT> fields (0 for a P-wave, 1
+for a QRS complex, 2 for a T wave, or 3 for a U-wave).
+
+<P>
+Table&nbsp;<A HREF="node4.html#excerpts">2</A> documents the make-up of the QT Database, showing
+the record name, the source database, the time interval excerpted
+(shown relative to the beginning of the original record in the source
+database), the number of manually annotated beats, and the pattern of
+the dominant waveform in each record.
+
+<P>
+
+<DIV ALIGN="CENTER"><TABLE CELLPADDING=3 BORDER="1">
+<CAPTION><STRONG>Table 2:</STRONG>
+Data excerpts used in the QT Database</CAPTION>
+<TR VALIGN="BASELINE"><TD ALIGN="CENTER" COLSPAN=4>Table 2. A: Records from MIT-BIH Arrhythmia Database</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">  
+</FONT><FONT SIZE="-1"><EM> Record</EM> </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1"> Original interval time </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   annot </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">  Waveform Pattern </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1"> 
+</FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1"> </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">  beats </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> (p) (QRS) (t) (u) </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">  
+sel100    </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   7:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+22:00   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N )  t ) 
+</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel102    </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   6:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+21:00   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   85  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">  ( N )  t ) u )</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel103    </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   1:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+15:00   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N )  t ) u 
+)</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel104    </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   15:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+30:00   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   77  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">  ( N )  t ) </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel114    </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   0:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+15:00   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   50 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N )  t ) 
+</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel116    </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   0:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+15:00   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   50  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N )  t ) u 
+)</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel117    </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   15:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+30:00   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N )  t ) u 
+) </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel123    </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   3:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+18:00   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N )  t ) u 
+)</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel213    </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   0:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+15:00   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   71 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N )  t ) 
+</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel221    </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   0:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+15:00   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">  ( N )  t ) </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel223    </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   13:30 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+28:30   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N ) (  t 
+)  </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel230    </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   7:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+22:00   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   50 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N )  t )  
+</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel231    </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   3:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+18:00   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   50 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N )  t )  
+</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel232    </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   15:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+30:00   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">  ( A )  t ) </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel233    </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   0:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+15:00   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N )  t ) 
+</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+15  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1"> 3:45:00    </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> 673 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> </FONT></TD>
+</TR>
+</TABLE></DIV>
+<P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING=3 BORDER="1">
+<TR VALIGN="BASELINE"><TD ALIGN="CENTER" COLSPAN=4>Table 2. B: Records from MIT-BIH ST Change Database</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">  
+</FONT><FONT SIZE="-1"><EM> Record</EM> </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1"> Original interval time </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">  annot </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">  Waveform Pattern </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1"> 
+</FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1"> </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> beats </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> (p) (QRS) (t) (u) </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">  
+sel301    </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   14:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+29:00   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N ) ( t 
+)  </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel302    </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   8:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+23:00   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N )  t )  
+</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel306    </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   0:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+15:00   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   36  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N )  t )  
+</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel307    </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   0:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+15:00   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N )  t ) 
+</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel308    </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   13:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+28:00   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   50   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N )  t ) 
+</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel310    </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   4:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+19:00   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">  ( N )  t ) u 
+)</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+6  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1"> 1:30:00    </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> 206 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> </FONT></TD>
+</TR>
+</TABLE></DIV>
+<P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING=3 BORDER="1">
+<TR VALIGN="BASELINE"><TD ALIGN="CENTER" COLSPAN=4>Table 2. C:</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="CENTER" COLSPAN=4>Records from MIT-BIH Supraventricular Arrhythmia Database</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">  
+</FONT><FONT SIZE="-1"><EM> Record</EM> </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1"> Original interval time </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">  annot </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">  Waveform Pattern</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1"> 
+</FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1"> </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">  beats </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> (p) (QRS) (t) (u) </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">  
+sel803    </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   0:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+15:00   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N )  t )  
+</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel808    </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   0:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+15:00   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N )  t ) u 
+)</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel811    </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   7:30 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+22:30   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N )  t )  
+</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel820    </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   0:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+15:00   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N )  t )  
+</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel821    </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   0:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+15:00   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N ) ( t ) 
+</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel840    </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   14:50 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+29:50   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   70  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N ) ( t ) 
+</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel847    </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   14:22 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+29:22   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   33 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N )  t )  
+</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel853    </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   5:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+20:00   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N )  t )  
+</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel871    </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   4:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+19:00   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   70 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N )  t ) 
+</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel872    </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   0:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+15:00   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N )  t )  
+</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel873    </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   0:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+15:00   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   33  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N )  t ) 
+</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel883    </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   13:30 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+28:30   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N )  t )  
+</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel891    </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   14:59 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+29:59   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   71 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N )  t )  
+</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+13  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1"> 3:15:00    </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> 517 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> </FONT></TD>
+</TR>
+</TABLE></DIV>
+<P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING=3 BORDER="1">
+<TR VALIGN="BASELINE"><TD ALIGN="CENTER" COLSPAN=4>Table 2. D: Records from MIT-BIH Normal Sinus Rhythm Database</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">  
+</FONT><FONT SIZE="-1"><EM> Record</EM> </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1"> Original interval time </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   annot </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">  Waveform Pattern</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1"> 
+</FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1"> </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">  beats </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> (p) (QRS) (t) (u)</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">  
+sel16265    </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   10:37:30 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+10:52:30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N 
+)  t )</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel16272  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">  11:13:10 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">11:28:10 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N )  t 
+)</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel16273  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">  11:22:36.5 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+11:37:36.5   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N 
+)  t ) </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel16420  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">  14:24:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+14:39:00   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N )  
+t ) </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel16483  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">  13:32:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+13:47:00  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N )  t 
+)</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel16539  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   20:56:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+21:11:00   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N ) 
+( t ) </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel16773  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   10:23:40 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+10:38:40   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N )  
+t ) u ) </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel16786  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   18:22:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+18:37:00  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N ) ( 
+t ) </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel16795  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">  15:00:00<IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+15:15:00  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N ) ( t 
+)</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel17453  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">  14:15:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+14:30:00   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N ) ( 
+t ) u ) </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">    
+10  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1"> 2:30:00    </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> 300 </FONT></TD>
+<TD></TD>
+</TR>
+</TABLE></DIV>
+<P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING=3 BORDER="1">
+<TR VALIGN="BASELINE"><TD ALIGN="CENTER" COLSPAN=4>Table 2. E: Records from European ST-T Database</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">  
+</FONT><FONT SIZE="-1"><EM> Record</EM> </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1"> Original interval time </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">  annot</FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">  Waveform Pattern </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1"> 
+</FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1"> </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">  beats </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">(p) (QRS) (t) (u) </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">  
+sele0104  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">  1:35:00 	<IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+1:50:00   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N )  
+t ) </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sele0106  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   1:31:00	 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+1:46:00   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N ) 
+( t ) u )</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sele0107  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1"> 1:9:30 	<IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+1:24:30   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   34 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N )  t 
+) u ) </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sele0110  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">  1:32:00	 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+1:47:00  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N )  t 
+) </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sele0111  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   1:19:00	 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+1:34:00  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N )  
+t ) u )</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sele0112  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">  1:32:10 	<IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+1:47:10  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   50  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N )  
+t ) u )</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sele0114  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">  1:38:00 	<IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+1:53:00  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">    30  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N ) ( 
+t ) ( u ) </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sele0116  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   00:37:30 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+00:52:30   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N 
+)   ( t ) </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sele0121  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   1:07:30 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+1:22:30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">    30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N )  t 
+) </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sele0122  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   40:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+55:00   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N )  t ) 
+u ) </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sele0124  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   1:41:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+:56:00   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   50 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N ) ( 
+t ) </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sele0126  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   1:36:40 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+1:51:40   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N )  
+t ) u ) </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sele0129  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   00:26:30<IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+00:41:30   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">    30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N 
+)  t )  </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sele0133  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">  00:37:30 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+00:52:30   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N 
+)  t ) </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sele0136  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   00:56:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+1:11:00  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N ) 
+( t )</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sele0166  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   00:52:30 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+1:07:30  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   36  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N ) 
+( t )</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sele0170  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   00:22:30<IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+00:37:30  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N )  
+t ) </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sele0203  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">  00:52:30 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+1:07:30   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N )  
+t )</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sele0210  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   1:45:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+2:00:00   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">    30  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N ) 
+( t ) </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sele0211  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">  1:45:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+2:00:00  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">    30  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N ) ( 
+t ) </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sele0303  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   00:34:30 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+00:49:30   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N ) 
+( t ) </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sele0405  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   00:22:30 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+00:37:30   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">    30  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N 
+)  t )</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sele0406  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   1:00:00<IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+1:15:00   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   31  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N )  
+t )</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sele0409 </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   1:20:00<IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+1:35:00  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">    30  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N ) ( 
+t )</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sele0411  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   1:30:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+1:45:00  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N )  
+t )</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sele0509  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   00:15:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+00:30:00  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">    30  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N 
+)  t ) </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sele0603  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   00:17:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+00:32:00 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">    30  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N 
+)  t ) u ) </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sele0604  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   00:00:30 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+00:15:30  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( 
+N )  t ) u ) </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sele0606  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">  1:31:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+1:46:00  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">    30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N )  t 
+) </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sele0607  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   1:00:10  <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+1:15:10  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( 
+N )  t ) </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sele0609 </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   00:35:30  <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+00:50:30   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">    30  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N 
+) ( t ) </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sele0612  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">  00:19:30 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+00:34:30  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N ) ( 
+t )  </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sele0704  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">   1:16:30 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+1:31:30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">    30   </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> ( p ) ( N )  
+t ) u )</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+33  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1"> 8:15:00    </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> 1041 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> </FONT></TD>
+</TR>
+</TABLE></DIV>
+<P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING=3 BORDER="1">
+<TR VALIGN="BASELINE"><TD ALIGN="CENTER" COLSPAN=4>Table 2. F: Records from ``sudden death'' patients from BIH</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">  
+</FONT><FONT SIZE="-1"><EM> Record</EM> </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1"> Original interval time </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   annot </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">  Waveform Pattern</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1"> 
+</FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1"> </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">  beats  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">  (p) (QRS) (t) (u)</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">  
+sel30    </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">  7:39:30 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+7:54:30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">  ( p ) ( N ) ( t 
+)  </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel31    </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">  12:57:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+13:12:00 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">  ( p ) ( N ) ( t 
+)  </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel32    </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">  20:52:20 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+21:07:20 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">  ( p ) ( N ) ( t 
+)  </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel33    </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">  14:57:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+15:12:40 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">  ( p ) ( N ) ( t 
+)  </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel34    </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">  5:53:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+6:08:00 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">  ( p ) ( N ) ( t 
+)  </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel35    </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">  4:52:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+5:07:00 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   31 (AF)  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   ( N )  </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel36    </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">  18:43:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+18:58:00 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   31 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   ( B ) ( t ) u 
+) </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel37    </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">  1:14:10 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+1:29:10 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   50 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   ( Q )   </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel38    </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">  5:00:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+5:15:00 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">  ( p ) ( N ) ( t 
+)  </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel39   </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">  00:04:30 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+00:19:30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">  ( p ) ( N ) ( t 
+)  </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel40   </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">  7:07:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+7:22:00 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">  ( p ) ( N ) ( t )  
+</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel41   </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">  00:05:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+00:20:00 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">  ( p ) ( N ) ( t 
+) </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel42   </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">  10:03:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+10:18:00 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">  ( p ) ( N ) ( t 
+) </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel43   </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">  08:00:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+08:15:00 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">  ( p ) ( N ) ( t 
+) </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel44   </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">  21:30:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+21:45:00 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">  ( p ) ( N ) ( t 
+)  </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">  
+sel45   </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">  17:30:30 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+17:45:30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">  ( p ) ( N ) ( t 
+) u ) </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel46   </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">  03:10:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+03:25:00 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">  ( p ) ( N ) ( t 
+)  </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel47   </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">  8:43:40 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+8:58:40 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30</FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">  ( p ) ( N ) ( t ) ( 
+u ) </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel48   </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">  07:11:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+07:26:00 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">  ( p ) ( N ) ( t 
+) </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel49   </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1">  23:10:40 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+23:25:40 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">  ( p ) ( N ) ( t 
+) </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel50  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1"> 10:53:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+11:8:00 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   32 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   ( N ) ( t ) u ) 
+</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel51  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1"> 00:55:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+01:10:00 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">  ( p ) ( N ) ( t 
+)</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel52  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1"> 00:08:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+00:23:00 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">  ( p ) ( N ) ( t 
+)</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">   
+sel17152  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1"> 1:04:00 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+1:19:00 </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">   30  </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1">  ( p ) ( N ) ( t 
+)</FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><FONT SIZE="-1">      
+24 </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-1"> 6:00:00    </FONT></TD>
+<TD ALIGN="LEFT"><FONT SIZE="-1"> 744 </FONT></TD>
+<TD></TD>
+</TR>
+</TABLE></DIV>
+<DIV ALIGN="CENTER"><A NAME="128">&#160;</A>
+<TABLE>
+<TR><TD>
+<TABLE CELLPADDING=3 BORDER="1">
+<TR VALIGN="BASELINE"><TD ALIGN="CENTER" COLSPAN=4>Table 2. G: Records from MIT-BIH Long-Term ECG Database</TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><font size=-1><EM> Record</EM></font></TD>
+<TD ALIGN="CENTER"><font size=-1>Original interval time</font></TD>
+<TD ALIGN="LEFT"><font size=-1>annot</font></TD>
+<TD ALIGN="LEFT"><font size=-1>Waveform Pattern</font></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT">&nbsp;</TD>
+<TD ALIGN="CENTER">&nbsp;</TD>
+<TD ALIGN="LEFT"><font size=-1>beats</font></TD>
+<TD ALIGN="LEFT"><font size=-1>(p) (QRS) (t) (u)</font></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><font size=-1>sel14046</font></TD>
+<TD ALIGN="CENTER"><font size=-1>9:14:13 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+9:29:13</font></TD>
+<TD ALIGN="LEFT"><font size=-1>31</font></TD>
+<TD ALIGN="LEFT"><font size=-1>( p ) ( N )  t )</font></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><font size=-1>sel14157</font></TD>
+<TD ALIGN="CENTER"><font size=-1>7:58:12 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+8:13:12</font></TD>
+<TD ALIGN="LEFT"><font size=-1>30</font></TD>
+<TD ALIGN="LEFT"><font size=-1>( p ) ( N )  t ) u )</font></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><font size=-1>sel14172</font></TD>
+<TD ALIGN="CENTER"><font size=-1>17:38:43 <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+17:53:43</font></TD>
+<TD ALIGN="LEFT"><font size=-1>50</font></TD>
+<TD ALIGN="LEFT"><font size=-1>( p ) ( N ) ( t ) ( u )</font></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><font size=-1>sel15814</font></TD>
+<TD ALIGN="CENTER"><font size=-1>21:57:00  <IMG
+ WIDTH="24" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="$\rightarrow$">
+22:12:00</font></TD>
+<TD ALIGN="LEFT"><font size=-1>30</font></TD>
+<TD ALIGN="LEFT"><font size=-1>( p ) ( N )  t )</font></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="LEFT"><font size=-1>4</font></TD>
+<TD ALIGN="CENTER"><font size=-1>1:00:00</font></TD>
+<TD ALIGN="LEFT"><font size=-1>141</font></TD>
+<TD ALIGN="LEFT">&nbsp;</TD>
+</TR>
+</TABLE>
+
+<A NAME="excerpts">&#160;</A></TD></TR>
+</TABLE>
+</DIV>
+<BR>
+<DIV ALIGN="CENTER"></DIV>
+<P>
+Holter records from the sudden death group are not calibrated with
+respect to amplitude; thus the signal gains recorded in the header
+files for these records are only estimates.  Records <EM>sel102</EM> and
+<EM>sel104</EM> come from paced ECG recordings.
+
+<P>
+<HR><B> Next:</B> <A NAME="tex2html53"
+ HREF="node5.html">Manual Annotations</A>
+<B>Up:</B> <A NAME="tex2html51"
+ HREF="cinc97.shtml">A Database for Evaluation of Algorithms for</A>
+<B> Previous:</B> <A NAME="tex2html45"
+ HREF="node3.html">The QT Database</A>
+
+<!--End of Navigation Panel-->
+</BODY>
+</HTML>

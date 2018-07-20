@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.2 beta6 (August 14th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>The QT Database</TITLE>
+<META NAME="description" CONTENT="The QT Database">
+<META NAME="keywords" CONTENT="cinc97">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="cinc97.css">
+<LINK REL="next" HREF="node4.html">
+<LINK REL="previous" HREF="node2.html">
+<LINK REL="up" HREF="cinc97.shtml">
+<LINK REL="next" HREF="node4.html">
+</HEAD>
+<BODY bgcolor="white">
+<B> Next:</B> <A NAME="tex2html43"
+ HREF="node4.html">The Records</A>
+<B>Up:</B> <A NAME="tex2html41"
+ HREF="cinc97.shtml">A Database for Evaluation of Algorithms for</A>
+<B> Previous:</B> <A NAME="tex2html35"
+ HREF="node2.html">Introduction</A>
+<BR> <P>
+
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00030000000000000000">
+The QT Database</A>
+</H1>
+
+<P>
+The QT Database includes ECGs which were chosen to represent a wide
+variety of QRS and ST-T morphologies, in order to challenge QT
+detection algorithms with real-world variability.  The records were
+chosen primarily from among existing ECG databases, including the
+MIT-BIH Arrhythmia Database[<A
+ HREF="node6.html#MIT-BIHdatabase">3</A>], the European
+Society of Cardiology ST-T Database[<A
+ HREF="node6.html#ST-Tdatabase">4</A>] (courtesy of
+Prof.  Carlo Marchesi), and several other ECG databases collected at
+Boston's Beth Israel Deaconess Medical Center.  The existing databases
+are an excellent source of varied and well characterized data, to
+which we have added reference annotations marking the location of
+waveform boundaries.  The additional recordings were chosen to
+represent extremes of cardiac (patho)physiology. We gathered new data
+from Holter recordings of patients who experienced sudden cardiac
+death during the recordings, and age-and-gender matched patients
+without diagnosed cardiac disease.
+
+<P>
+The QT Database contains a total of 105 fifteen-minute excerpts of two
+channel ECGs, selected to avoid significant baseline wander or other
+artifacts.  (We note that a consequence of this selection procedure is
+that heart rates during these excerpts tend to be relatively low,
+probably since higher rates are frequently associated with noisy
+signals that would have failed to satisfy our selection criteria.)
+Table&nbsp;<A HREF="node3.html#bases">1</A> shows the sources of the data.
+
+<P>
+<BR>
+<DIV ALIGN="CENTER">
+
+
+<DIV ALIGN="CENTER"><FONT SIZE="-2">
+
+<A NAME="bases">&#160;</A></FONT><A NAME="21">&#160;</A>
+<TABLE CELLPADDING=3 BORDER="1">
+<CAPTION><STRONG>Table 1:</STRONG>
+<EM>  Distribution of the 105 records according to the 
+original Database.</EM></CAPTION>
+<TR VALIGN="BASELINE"><TD ALIGN="CENTER"><FONT SIZE="-2"> 
+MIT-BIH  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-2">   MIT-BIH </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-2"> MIT-BIH </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-2"> MIT-BIH </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-2"> ESC </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-2"> MIT-BIH </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-2"> Sudden </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="CENTER"><FONT SIZE="-2">  
+Arrhyt.  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-2">   ST DB </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-2"> Sup. Vent.  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-2"> Long Term  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-2"> STT </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-2"> NSR DB </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-2"> Death </FONT></TD>
+</TR>
+<TR VALIGN="BASELINE"><TD ALIGN="CENTER"><FONT SIZE="-2">  
+15  </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-2">  6 </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-2"> 13 </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-2"> 4 </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-2"> 33 </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-2"> 10 </FONT></TD>
+<TD ALIGN="CENTER"><FONT SIZE="-2"> 24 </FONT></TD>
+</TR>
+</TABLE></DIV>
+</DIV>
+<BR> 
+
+<P>
+Within each record, between 30 and 100 representative beats were
+manually annotated by cardiologists, who identified the beginning,
+peak and end of the P-wave, the beginning and end of the QRS-complex
+(the QRS fiducial mark, typically at the R-wave peak, was given by an
+automated QRS detector), the peak and end of the T-wave, and (if
+present) the peak and end of the U-wave.  In order to permit the study
+of beat-to-beat variations such as alternans, 30 consecutive beats of
+the dominant morphology were annotated in each case if possible.  In
+records with significant QRS morphology variation, up to 20 beats of
+each non-dominant morphology were also annotated.  Only ``normal''
+beats were annotated.  The criteria for beat selection were: 1) all
+are classified as ``normal'' by A<SMALL>RISTOTLE</SMALL>[<A
+ HREF="node6.html#aristotle">5</A>], and
+2) the preceding and following beats are also normal.  Beats were only
+annotated during the final 5 minutes of the excerpts in order to allow
+analysis algorithms a minimum of 10 minutes for learning.  In all,
+3622 beats have been annotated by cardiologists.  These annotations
+have been carefully audited to eliminate gross errors, although the
+precise placement of each annotation was left to the judgment of the
+expert annotators.  The current edition of the QT Database includes
+two independently derived sets of annotations for 11 records (to
+permit study of inter-observer variability).  The remaining 94 records
+contain only a single set of expert annotations.
+
+<P>
+All records were sampled at 250 Hz.  Those which were not originally
+sampled at that rate were converted using <TT>xform</TT>, an application
+from the MIT Waveform Database Software Package
+[<A
+ HREF="node6.html#MIT-BIHdatabase">3</A>].
+
+<P>
+<HR><B> Next:</B> <A NAME="tex2html43"
+ HREF="node4.html">The Records</A>
+<B>Up:</B> <A NAME="tex2html41"
+ HREF="cinc97.shtml">A Database for Evaluation of Algorithms for</A>
+<B> Previous:</B> <A NAME="tex2html35"
+ HREF="node2.html">Introduction</A>
+
+<!--End of Navigation Panel-->
+</BODY>
+</HTML>

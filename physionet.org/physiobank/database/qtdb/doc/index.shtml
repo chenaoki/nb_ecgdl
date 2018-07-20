@@ -1,0 +1,232 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.2 beta6 (August 14th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>A Database for Evaluation of Algorithms for Measurement of QT and Other Waveform Intervals in the ECG 1 </TITLE>
+<META NAME="description" CONTENT="A Database for Evaluation of Algorithms for Measurement of QT and Other Waveform Intervals in the ECG 1 ">
+<META NAME="keywords" CONTENT="cinc97">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="cinc97.css">
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+<body bgcolor=white>
+
+<script language="JavaScript" type="text/javascript">
+<!--
+function setCookie(c_name, value, path, exdays)
+{
+    var exdate = new Date();
+    exdate.setDate(exdate.getDate() + exdays);
+    var c_value = escape(value) +
+       ((exdays) ? ";expires=" + exdate.toUTCString() : "") +
+       ((path) ? ";path=" + path : "");
+    document.cookie = c_name + "=" + c_value;
+}
+
+function getCookie(c_name)
+{
+    var i, x, y, ARRcookies = document.cookie.split(";");
+    for (i = 0; i < ARRcookies.length; i++) {
+        x = ARRcookies[i].substr(0, ARRcookies[i].indexOf("="));
+	y = ARRcookies[i].substr(ARRcookies[i].indexOf("=") + 1);
+	x = x.replace(/^\s+|\s+$/g, "");
+	if (x == c_name) {
+	    return unescape(y);
+	}
+    }
+}
+
+window.onload=function()
+{
+    showHide();
+}
+
+function showHide()
+{
+    styleObj = document.getElementById('droplinks').style;
+    var headcompact = getCookie("headcompact");
+    if (headcompact == null) {
+	setCookie("headcompact", "false", "/");
+	headcompact = "false";
+    }
+    if (headcompact == "false") {
+   	styleObj.display = '';
+	document.getElementById('div1').innerHTML =
+	    "&nbsp;<b><tt title='Click \"-\" to show less'>-</tt></b>&nbsp;";
+    }
+    else {
+   	styleObj.display = 'none';
+	document.getElementById('div1').innerHTML =
+	    "&nbsp;<b><tt title='Click \"+\" to show more'>+</tt></b>&nbsp;";
+    }
+}
+
+function toggle() {
+    var headcompact = getCookie("headcompact");
+    if (headcompact == null || headcompact == "false") {
+	headcompact = "true";
+    }
+    else {
+        headcompact = "false";
+    }
+    setCookie("headcompact", headcompact, "/");
+    showHide();
+}
+//-->
+</script>
+<style type="text/css">
+@import url(/physiobank.css);
+</style>
+<table width="100%" cellpadding="2" cellspacing="0" border="0">
+   <tr bgcolor="#4040f0">
+    <td align="left" bgcolor="#3030a0" width="3"><font color="white">
+      <div id="div1" onclick="toggle();"><b>&nbsp;&nbsp;&nbsp;</b></div></td>
+    </font>
+    <td><a href="/" title="PhysioNet main page" style="text-decoration:none"><font color="white"><b>Home</b></font></a></td>
+    <td align="right"><font color="white"><b>
+	  <a href="/physionet-intro.shtml" title="Challenges, tutorials, ..." style="text-decoration:none"><font color="white">PhysioNet Library</font></a>
+	  &nbsp;&middot;&nbsp; 
+	  <a href="/physiobank/" title="Data archives, ATM" style="text-decoration:none"><font color="white">PhysioBank</font></a>
+	  &nbsp;&middot;&nbsp;
+	  <a href="/physiotools/" title="Open source software" style="text-decoration:none"><font color="white">PhysioToolkit</font></a>
+	  &nbsp;&middot;&nbsp;
+	  <a href="/users/" title="Community workspace" style="text-decoration:none"><font color="white">PhysioNetWorks</font></a></b>
+   </font></td></tr>
+</table>
+<table id="droplinks" style="display:'';"
+       width="100%" cellpadding="2" cellspacing="0" border="0">
+  <tr bgcolor="#d0d0ff">
+  <td align="left"><h2><a href="/physiobank/" style="text-decoration:none">
+	<font color="#4040f0">PhysioBank</font><br>
+	<font size=-1 color="#4040f0">physiologic signal archives<br>
+	  for biomedical research</font></a></h2>
+  </td>
+  <td align="right">
+<!-- Google CSE Search Box Begins  -->
+<form action="http://physionet.org/search-results.shtml" id="searchbox_007405203507124691154:xfntrbzi-tu">
+  <input type="hidden" name="cx" value="007405203507124691154:xfntrbzi-tu" />
+  <input type="hidden" name="cof" value="FORID:11" />
+  <input type="text" name="q" size="25" />
+  <input type="submit" name="sa" value="PhysioNet Search" />
+</form>
+<script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=searchbox_007405203507124691154%3Axfntrbzi-tu"></script>
+<!-- Google CSE Search Box Ends -->
+<a href="/physiotour/">Tour</a>&nbsp;|
+<a href="/mirrors/">Mirrors</a><br>
+<a href="/citations.shtml">How to Cite</a>&nbsp;|
+<a href="/guidelines.shtml">Contributing</a>&nbsp;|
+<a href="/faq.shtml">FAQ</a>
+  </td>
+  </tr>
+
+  <tr><td colspan="2" align="center" bgcolor="#4040f0"><font color="white"><b>
+    <a href="/physiobank/physiobank-intro.shtml" style="text-decoration:none"><font color="white">Getting&nbsp;Started</font></a>
+	 &nbsp;&middot;&nbsp;
+    <a href="/physiobank/database/" style="text-decoration:none"><font color="white">Signal&nbsp;Archives</font></a>
+	 &nbsp;&middot;&nbsp;
+    <a href="/cgi-bin/ATM"><font color="white" title="Explore PhysioBank in your web browser" style="text-decoration:none">ATM</font></a>
+	 &nbsp;&middot;&nbsp;
+    <a href="/physiobank/call-for-data/" style="text-decoration:none"><font color="white">Call&nbsp;for&nbsp;Data</font></a>
+	 &nbsp;&middot;&nbsp;
+    <a href="/physiobank/about.shtml" style="text-decoration:none"><font color="white">About&nbsp;PhysioBank</font></a>
+	 &nbsp;&middot;&nbsp;
+    <a href="/site-map.shtml" style="text-decoration:none"><font color="white">Site&nbsp;Map</a></b></font>
+    </td>
+  </tr>
+</table>
+<script language="javascript" src="/breadcrumbs.js"></script>
+
+
+<H1 ALIGN="CENTER"><FONT SIZE="+2"><B>A Database for Evaluation of Algorithms for Measurement 
+of QT and Other Waveform Intervals in the ECG</B> </FONT> </H1>
+<P ALIGN="CENTER"><STRONG><FONT SIZE="+1">Pablo Laguna<SUP>1</SUP>, Roger G. Mark<SUP>2,3</SUP>, Ary
+Goldberger<SUP>3</SUP> and  George B. Moody<SUP>2,3</SUP></FONT> </STRONG></P>
+<P ALIGN="CENTER"><STRONG> <FONT SIZE="+1"><SUP>1</SUP> Dept. Ingenier&#237;a Electr&#243;nica y Comunicaciones.
+ Centro Polit&#233;cnico Superior,   Univ. de Zaragoza, Spain 
+<BR>
+<SUP>2</SUP> Harvard-MIT Division of Health Sciences and Technology, Cambridge, MA, USA 
+<BR>
+<SUP>3</SUP> Cardiovascular Division, Beth Israel Deaconess Medical Center, Boston, MA USA
+ 
+<BR></FONT> </STRONG></P>
+
+
+<P><p>
+<center><table bgcolor="lightblue">
+<tr><td>
+This article originally appeared in <em>Computers in Cardiology 1997</em>,
+vol. 24, pp. 673-676 (Piscataway, NJ: IEEE Computer Society Press).  Please
+cite this publication when referencing this material.  This HTML version
+incorporates minor revisions for publication on PhysioNet.
+</td></tr>
+</table></center>
+
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS">&#160;</A>
+
+<UL>
+<LI><A NAME="tex2html8"
+ HREF="node1.html">Abstract</A>
+<LI><A NAME="tex2html9"
+ HREF="node2.html">Introduction</A>
+<LI><A NAME="tex2html10"
+ HREF="node3.html">The QT Database</A>
+<LI><A NAME="tex2html11"
+ HREF="node4.html">The Records</A>
+<LI><A NAME="tex2html12"
+ HREF="node5.html">Manual Annotations</A>
+<LI><A NAME="tex2html13"
+ HREF="node6.html">Bibliography</A>
+</UL>
+<!--End of Table of Child-Links-->
+
+<p>
+The QT Database itself is available <a href="../">here</a>.
+
+<p><font size=-1>
+This  work  was  supported by grant TIC94-0608-C02-02 from CICYT, and PIT06/93
+from CONAI, Spain.</font>
+
+<!-- footer.shtml for PhysioNet pages -->
+
+
+
+</div>
+<div class="footer">
+<table width="100%" style="margin: 0;">
+<tr>
+<td style="text-align: center; vertical-align: middle; padding: 0;
+	   background: (none);">
+<a href="http://physionet.org/cgi-bin/feedback" style="text-decoration:none">
+<font color="white"><b>Send feedback about this page to PhysioNet</b></font></a>
+</td>
+</tr>
+</table>
+<table width="100%" style="margin: 0;">
+<tr>
+<td style="display: inline-block; padding: 0; vertical-align: top; font-size: 80%; margin: 2em; max-width: 40%">
+Your comments and suggestions are welcome. Please send them to <a href="mailto:webmaster@physionet.org?subject=http://physionet.org/physiobank/database/qtdb/doc/index.shtml">
+<tt>webmaster@physionet.org</tt></a>. 
+<br><br>
+For general enquiries about PhysioNet and its contents and usage, please see our <a href="/faq.shtml">FAQ</a>.
+<br><br>
+Updated 
+
+Friday,  9 February 2001 at 01:13 EST
+</td>
+<td style="display: inline-block; margin: 0 1em 0 auto; max-width: 45%;">
+<br>PhysioNet is supported by the <a href="http://www.nigms.nih.gov/">National Institute of General Medical Sciences (NIGMS)</a> and the <a href="https://www.nibib.nih.gov/">National Institute of Biomedical Imaging and Bioengineering (NIBIB)</a> under NIH grant number 2R01GM104987-09.
+</td>
+</tr>
+</table>
+</div>
+</body></html>
+
+</body>
+</html>

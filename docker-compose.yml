@@ -1,0 +1,12 @@
+version: '2'
+services:
+  jupyter:
+    build:
+      context: ./
+    image: nb_ecgdl
+    container_name: nb_ecgdl_container
+    ports:
+      - "27487:8888"
+    volumes:
+      - "./:/root/notebooks"
+      - "/mnt/data1:/mnt/ext"

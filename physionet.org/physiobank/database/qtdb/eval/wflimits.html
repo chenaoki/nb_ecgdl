@@ -1,0 +1,691 @@
+<html>
+<head>
+<title>Evaluation of an Automatic Threshold Based Detector of Waveform
+ Limits in Holter ECG with the QT database</title>
+</head>
+<body bgcolor="white">
+
+<center><h1>Evaluation of an Automatic Threshold Based Detector of Waveform
+ Limits in Holter ECG with the QT database</h1></center>
+
+<p align="center">R. Jan&eacute;<sup>1</sup>, A. Blasi<sup>1</sup>,
+J. Garc&iacute;a<sup>2</sup>, P. Laguna<sup>2</sup></p>
+
+<p align="center"><sup>1</sup>Dep. ESAII, Centre de Recerca en
+Enginyeria Biom&egrave;dica, UPC, Barcelona, Spain.</p>
+<p align="center"><sup>2</sup>Dep. Ingenier&iacute;a Electr&oacute;nica y
+Comunicaciones, Centro Polit&eacute;cnico Superior. Univ. de Zaragoza,
+Spain<p>
+
+<a name="abstract"><h2>Abstract</h2></a>
+
+<p><i>In this paper we evaluate a single-lead threshold
+based ECG wave boundaries detector with a QT database developed for
+validation purposes. We also identify its different sources of error
+distinguishing those that come from precision errors in boundary location
+from those that come from morphology misclassification. We obtain 71% of
+records with correct morphology identification of T wave and variance in
+boundary location within manual referees variance. The remaining records
+analyzed correspond to signals with poor SNR at the T wave, or morphology
+discrepancies between algorithm and experts.</i></p>
+
+<a name="intro"><h2>1. Introduction</h2></a>
+
+<p>Some cardiac clinical information can be determined by analyzing significant
+intervals in ECG signals, like QT, QRS, PQ and others considered of
+interest. However, it is necessary to have their positions within each beat
+well defined. Automatic methods offer a useful help adding extended and
+efficient diagnostic protocols in ECG signal processing equipment [1].</p>
+
+<p>Nevertheless, ECG signals, as all biomedical signals,
+have several characteristics that can become sources of error for automatic
+detectors: noise contaminating the signals, non-stationary or not well
+defined waveform morphologies, absence of some waves (P or T waves do not
+always appear), ambiguity when defining where the wave boundaries should be
+marked (this can also be a problem for expert cardiologists), etc. All
+those difficulties are even more remarkable in Holter ECG recordings, due
+to the non-rest conditions of the patient.</p>
+
+<p>The <a href="/physiobank/database/qtdb/">QT Database</a> [2], also presented
+in this conference, was developed with the aim to be a reference when
+exhaustively validating ECG wave boundaries detectors. It contains 105 excerpts
+(each 15 minutes long) taken from ECG records manually annotated for ECG wave
+boundaries location. This will be a useful tool to evaluate the performance of
+the threshold based detector (TD) of waveform limits presented in [3, 6].This
+detector first locates each beat using a differentiated and low-pass filtered
+ECG signal as input. Next, the other wave boundaries are located.  This
+detector was evaluated using the CSE database in [6].</p>
+
+<p>Here another validation is carried out with enough reference beats to infer
+statistical conclusions. First of all we determine whether the detector gives
+precise and correct results. Another purpose of this work is to define which
+errors are more common in order to focus the detector&#146;s improvements in
+the future. </p>
+
+<p>In the QT database there are two channels recorded for each ECG signal. Both
+leads were presented at the same time to the referees, so they used whatever
+lead they considered more appropriate to determine the waveform
+boundaries. Since the TD is a single channel detector, we analyzed both signals
+separately. We compared both sets of annotations with the referees&#146; and we
+selected the file with annotations closer to the manual ones, which correspond
+to the channel with better SNR at the T wave (usually not because of high noise
+but because of small T wave signal energy). We can then consider that we truly
+evaluated the algorithm&#146;s performance with the same signals considered to
+locate manual annotations.</p>
+
+<p>We have classified all signals in several groups according to numerical and
+visual criteria. Automatic and manual annotations have been visualized
+simultaneously. In case of poor validation results, that is, high mean error,
+high standard deviation or both, the source of error has been identified and
+the record included in one of the groups described in section 3. Therefore, at
+the end of this analysis we had several groups of records, each one with
+different validation results and detection difficulties, according to their
+different and special characteristics.</p>
+
+<a name="qtdb"><h2>2. The QT Database</h2></a>
+
+<p>The purpose of this database [2] is to have manually annotated samples of
+beats with which automatic algorithms for QT measurement and other significant
+points detection can be evaluated.  The database has 105 fifteen-minute
+excerpts of two-channel digitized ECGs, and software to analyze them. The
+records were chosen to represent a wide variety of T wave morphologies, so that
+they would be useful to evaluate the performance of automatic methods when
+studying the ventricular repolarization interval. The records are chosen from
+among existing ECG databases: the Beth Israel Hospital (BIH), the European
+Society of Cardiology (ESC), and the MIT Databases (table 1). These records
+include also some patients that suffered a sudden death process, and subjects
+not previously diagnosed of any cardiac disturbance.</p>
+
+<center>
+<table border cellspacing=2 bordercolor="#808080" cellpadding=3>
+<tr><td>SD</td><td>MSV</td><td>EST</td><td>MIT</td><td>LT</td><td>MST</td>
+<td>N</td></tr>
+<tr><td>23%</td><td>12%</td><td>31%</td><td>14%</td><td>4%</td><td>6%</td>
+<td>10%</td></tr>
+</table>
+</center>
+
+<p><b>Table 1.</b> Total percentages of records in the QTDB, where MIT is
+MIT-BIH Arrhythmia; EST is European ST-T; MSV is MIT-BIH Supraventricular
+Arrhythmia; LT is MIT-BIH Long Term ECG; MST is MIT-BIH ST Change; N is BIH
+Hospital Normal Subjects; SD is BIH Hospital Sudden Death Patients</p>
+
+<p>For each one of its 105 records, a minimum of 30 beats have been manually
+annotated by one or more cardiologists at the BIH using the visualization
+software attached to the MIT/BIH database distribution CD/ROM. Those annotated
+beats in each record were chosen from minute 10 of the recording (to allow
+learning algorithms to set up). Then 30 consecutive beats were manually
+annotated to allow the study of short-term variations. When the QRS detector,
+used to position beats [4], identified more than one morphology type, subsets
+of 20 beats were also added to the selection. In this way, the variety of
+annotated morphologies was broadened.</p>
+
+<p>For each annotated beat, there are the following manual annotations: the
+beginning, peak, and end of the P wave; the beginning and end of the QRS (QRS
+position was given by a QRS detector); the peak and the end of the T wave. In
+some cases, the beginning of the T wave is also marked, and, if present, U
+waves are also annotated.</p>
+
+<a name="valpar"><h2>3. The validation parameters</h2></a>
+
+<p>To quantify the correctness and the precision of the TD detector&#146;s
+performance we used parameters such as the mean error (me) and the standard
+deviation of this error (SD) [5]. The mean error is used to determine how close
+is the detector&#146;s criterion to the referees&#146;. The standard deviation
+gives an idea about the stability with which the detection criterion has been
+applied. </p>
+
+<p>We considered the accepted standard deviation tolerances for several
+significant points (Table 2) from the measurements made by different experts
+[5]. Those measures will be the minimum values that could be requested to any
+automatic algorithm.</p>
+
+<center>
+<table border cellspacing=2 bordercolor="#808080" cellpadding=3>
+<tr><td>&nbsp;</td><td>P<sub>on</sub></td><td>P<sub>off</sub></td>
+<td>QRS<sub>on</sub></td><td>QRS<sub>off</sub></td><td>T<sub>end</sub></td>
+</tr>
+<tr><td><font face="Symbol">&#115;</font><sub>accepted</sub></td>
+<td>10.2</td>
+<td>12.7</td>
+<td>6.5</td>
+<td>11.6</td>
+<td>30.6</td>
+</tr>
+</table>
+
+<p><b>Table 2.</b> Accepted tolerances for referee deviations (in ms) </p>
+</center>
+
+<p>In order to classify the signals in groups by the correctness of T-wave
+boundaries location, we used the results of the detector&#146;s validation,
+that is, we used the results of the values given by the detector of mean error
+and standard deviation for the end of T-wave. </p>
+
+<p>Each group has the following characteristics:</p>
+
+<ul>
+<li>Group 1: well detected signals; with reasonable mean and standard
+deviation (me&lt;40 ms, SD&lt;50 ms).</li>
+<li>Group 2: signals with morphology identification errors, usually
+systematic errors (me&gt;40 ms, SD&lt;50 ms).</li>
+<li>Group 3: poor SNR, due either to noise or to small T wave amplitude
+(me&lt;40 ms, SD&gt;50 ms).</li>
+<li>Group 4: Combination of characteristics of groups 2 and 3 (me&gt;40 ms,
+SD&gt;50 ms). Usually morphology identification error together with poor
+SNR.</li>
+</ul>
+
+<p>Examples of signals belonging to the different groups
+are shown in the figure 1, where the same beat has manual (A) and automatic
+(B) annotations.</p>
+
+<center>
+<table>
+<tr>
+<td align=center>A</td>
+<td align=center>B</td>
+<td></td>
+</tr>
+<tr>
+<td><img src="Image1.png" alt="[manually annotated]"></td>
+<td><img src="Image2.png" alt="[automatically annotated]"></td>
+<td valign=center>Group 1</td>
+</tr>
+
+<tr>
+<td><img src="Image3.png" alt="[manually annotated]"></td>
+<td><img src="Image4.png" alt="[automatically annotated]"></td>
+<td valign=center>Group 2</td>
+</tr>
+
+<tr>
+<td><img src="Image5.png" alt="[manually annotated]"></td>
+<td><img src="Image6.png" alt="[automatically annotated]"></td>
+<td valign=center>Group 3</td>
+</tr>
+
+<tr>
+<td><img src="Image7.png" alt="[manually annotated]"></td>
+<td><img src="Image8.png" alt="[automatically annotated]"></td>
+<td valign=center>Group 4</td>
+</tr>
+</table>
+</center>
+
+<p><b>Figure 1.</b> Examples of signals included in the different groups. Left
+signals have manual annotations (A), and right signals the ones obtained by the
+automatic TD (B).</p>
+
+<p>We also used two additional parameters in the detector&#146;s validation
+[7]: the percentages of misdetections for each significant point defined as
+Sensitivity (S) and Positive Predictivity (P):</p>
+
+<center>
+<table cellspacing=20>
+<tr><td><img src="Image9.png"></td><td><img src="Image10.png"></td></tr>
+</table>
+</center>
+
+<p>where <i>n</i> are the right detections, <i>f(+)</i> is the number of
+automatic annotations that are not registered in the set of manual annotation
+file; <i>f(-)</i> is the number of manual annotations that are not registered
+in the automatic annotation file. All these values refer only to the set of
+annotated beats at the database.</p>
+
+<a name="results"><h2>4. Results</h2></a>
+
+<p>The single-lead TD detector has been applied to each signal of every
+record. Thus, two sets of annotations were available for each record at the end
+of the detection phase. Since the experts analyzed both signals at the same
+time, in many records it is not clear which lead was used to locate wave
+boundaries for the majority of beats. </p>
+
+<p>We analyze first annotations from channel 0, and when evaluation results in
+a record were disappointing with this channel&#146;s annotations, results in
+channel 1 were studied. In some cases this second set of results was clearly
+better, because of better distinction of wave boundaries than in the other
+channel. By using the second set of annotations we are closer to the
+expert&#146;s analysis, corroborating the hypothesis that the expert has always
+used the channel with better visual T wave identification.</p>
+
+<p>To go further in the study and identify where the detector failed and why,
+we decided to classify all records in the four groups described in section
+3. The results obtained then are shown and commented in section 4.2.</p>
+
+<a name="global">
+<h3>4.1 Global results obtained analyzing all records available</h3></a>
+
+<p>We have compared the performance of the TD detector with the manual analysis
+of the signals carried out by expert cardiologists. The results we have
+obtained for all the available records in the QT database are in Table 3.</p>
+
+<center>
+<table border cellspacing=2 bordercolor="#808080" cellpadding=3>
+<tr><td>&nbsp;</td>
+<td>Beats</td>
+<td>me</td>
+<td>SD</td>
+<td>SD*</td>
+<td>S (%)</td>
+<td>P (%)</td>
+</tr>
+<tr><td>P<sub>on</sub></td>
+<td>2596</td>
+<td>10.26</td>
+<td>14.08</td>
+<td>10.2</td>
+<td>96.18</td>
+<td>99.16</td>
+</tr>
+<tr><td>P</td>
+<td>2626</td>
+<td>-0.48</td>
+<td>10.96</td>
+<td>&nbsp;</td>
+<td>97.01</td>
+<td>99.47</td>
+</tr>
+<tr><td>P<sub>end</sub></td>
+<td>2627</td>
+<td>-5.73</td>
+<td>13.57</td>
+<td>12.7</td>
+<td>97.01</td>
+<td>99.47</td>
+</tr>
+<tr><td>QRS<sub>on</sub></td>
+<td>3130</td>
+<td>-7.82</td>
+<td>10.86</td>
+<td>6.5</td>
+<td>99.88</td>
+<td>99.97</td>
+</tr>
+<tr><td>R</td>
+<td>3130</td>
+<td>-9.32</td>
+<td>4.41</td>
+<td>&nbsp;</td>
+<td>99.88</td>
+<td>99.97</td>
+</tr>
+<tr><td>QRS<sub>end</sub></td>
+<td>3130</td>
+<td>-3.64</td>
+<td>10.74</td>
+<td>11.6</td>
+<td>99.88</td>
+<td>99.97</td>
+</tr>
+<tr><td>Ton</td>
+<td>1241</td>
+<td>16.0</td>
+<td>29.82</td>
+<td>&nbsp;</td>
+<td>98.00</td>
+<td>98.70</td>
+</tr>
+<tr><td>T</td>
+<td>2932</td>
+<td>23.26</td>
+<td>28.26</td>
+<td>&nbsp;</td>
+<td>98.80</td>
+<td>99.78</td>
+</tr>
+<tr><td>T<sub>end</sub></td>
+<td>2996</td>
+<td>18.68</td>
+<td>29.79</td>
+<td>30.6</td>
+<td>98.92</td>
+<td>99.91</td>
+</tr>
+</table>
+</center>
+
+<p><b>Table 3.</b> Evaluation results, comparing the automatic waveform
+boundaries detection with manual annotations.&nbsp;Mean and standard deviation
+measurements are in milliseconds.</p>
+
+<p>The last two columns of this table show the high percentages of both
+Sensitivity and Positive Predictivity for each significant point. This means
+that misdetection errors are remarkably low.</p>
+
+<p>The large number of annotations used in this study (see first column of
+Table 3), allow us to infer statistical conclusions about the detector. To do
+so, we have also included in this table the accepted tolerances for referee
+deviations (SD*), shown in Table 2. From Table 3 we can already conclude that
+the algorithm&#146;s deviation for all wave boundaries is comparable to experts
+annotations (note that the sampling period in the database is 4 ms). However,
+there is still a large systematic shift in T wave location that we will analyze
+more in detail in the next section.</p>
+
+<a name="details">
+<h3>4.2 Results obtained after classifying the signals</h3></a>
+
+<p>In this second part of the study, we intend to identify in which signals the
+detector fails, and how we know that it fails. To do so we have classified the
+signals in the four groups described in section 3. This classification was
+carried out using the validation results obtained for the end of the T wave
+together with the visualization of each signal and its manual and automatic
+sets of annotations.</p>
+
+<p>Results of the analysis after this final classification can be seen in
+tables 4, 5 and 6. Since this classification was done according to the
+evaluation results for the end of the T wave, the most significant results are
+those in Table 6.</p>
+
+<hr>
+<center>
+<table border cellspacing=2 bordercolor="#808080" cellpadding=3>
+<tr><td>&nbsp;</td>
+<td>Patients</td>
+<td>beats</td>
+<td>me </td>
+<td>SD</td>
+<td>S (%)</td>
+<td>P (%)</td>
+</tr>
+<tr><td>group 1</td>
+<td>29</td>
+<td>847</td>
+<td>7.5</td>
+<td>22.52</td>
+<td>98.66</td>
+<td>98.56</td>
+</tr>
+<tr><td>group 2</td>
+<td>7</td>
+<td>197</td>
+<td>59.51</td>
+<td>41.58</td>
+<td>94.59</td>
+<td>100</td>
+</tr>
+<tr><td>group 3</td>
+<td>4</td>
+<td>93</td>
+<td>24.73</td>
+<td>62.5</td>
+<td>89.21</td>
+<td>100</td>
+</tr>
+<tr><td>group 4</td>
+<td>5</td>
+<td>134</td>
+<td>0.86</td>
+<td>35.17</td>
+<td>97.66</td>
+<td>96.47</td>
+</tr>
+</table>
+
+<p><b>Table 4.</b> Beginning of T-wave results.</p>
+</center>
+<hr>
+
+<center>
+<table border cellspacing=2 bordercolor="#808080" cellpadding=3>
+<tr><td>&nbsp;</td>
+<td>Patients</td>
+<td>beats</td>
+<td>me </td>
+<td>SD</td>
+<td>S (%)</td>
+<td>P (%)</td>
+</tr>
+<tr><td>group 1</td>
+<td>72</td>
+<td>2128</td>
+<td>4.76</td>
+<td>15.15</td>
+<td>99.78</td>
+<td>99.91</td>
+</tr>
+<tr><td>group 2</td>
+<td>12</td>
+<td>342</td>
+<td>60.97</td>
+<td>17.25</td>
+<td>96.88</td>
+<td>100</td>
+</tr>
+<tr><td>group 3</td>
+<td>7</td>
+<td>197</td>
+<td>34.38</td>
+<td>89.54</td>
+<td>94.91</td>
+<td>100</td>
+</tr>
+<tr><td>group 4</td>
+<td>10</td>
+<td>291</td>
+<td>99.37</td>
+<td>69.41</td>
+<td>97.34</td>
+<td>98.43</td>
+</tr>
+</table>
+
+<p><b>Table 5.</b> Peak of T-wave results.</p>
+</center>
+<hr>
+
+<center>
+<table border cellspacing=2 bordercolor="#808080" cellpadding=3>
+<tr><td>&nbsp;</td>
+<td>Patients</td>
+<td>beats</td>
+<td>me </td>
+<td>SD</td>
+<td>S (%)</td>
+<td>P (%)</td>
+</tr>
+<tr><td>group 1</td>
+<td>73</td>
+<td>2163</td>
+<td>-0.63</td>
+<td>19.27</td>
+<td>99.7</td>
+<td>99.87</td>
+</tr>
+<tr><td>group 2</td>
+<td>12</td>
+<td>342</td>
+<td>70.86</td>
+<td>21.11</td>
+<td>96.88</td>
+<td>100</td>
+</tr>
+<tr><td>group 3</td>
+<td>7</td>
+<td>196</td>
+<td>19.96</td>
+<td>69.41</td>
+<td>94.39</td>
+<td>100</td>
+</tr>
+<tr><td>group 4</td>
+<td>10</td>
+<td>296</td>
+<td>102.3</td>
+<td>88.11</td>
+<td>98.92</td>
+<td>100</td>
+</tr>
+</table>
+<p><b>Table 6.</b> End of T-wave results.</p>
+</center>
+<hr>
+
+<p>Nevertheless, results obtained for the beginning and peak of the T wave are
+similar to those for the end of this wave (Table 6).</p>
+
+<p>Signal classification was carried out without paying attention to which
+database the signals came from. </p>
+
+<p>The percentages of records belonging to each database are represented in
+Table 7. Most records classified in groups 3 and 4 (poor detection results due
+to low SNR or small T amplitude) come from the Sudden Death Database (SD) and
+the MIT-BIH Supraventricular Database. On the other hand, most records
+classified in group 2 (with systematic morphology recognition errors) come from
+the European ST-T Database and the Sudden Death Database.</p>
+
+<p>The detector&#146;s poor performance with the signals coming from the SD was
+expected beforehand because of the very poor SNR in those signals due to
+non-homogeneous repolarization. This makes T waves poorly marked and
+susceptible of large error discrepancies between manual and automatic
+measurements.</p>
+
+<p>Records from the MIT-BIH ST Change Database (MST) and from the Normal
+Subjects Database (N) are all in group 1 (with no detection errors).</p>
+
+<center>
+<table border cellspacing=2 bordercolor="#808080" cellpadding=3>
+<tr><td>&nbsp;</td>
+<td>SD</td>
+<td>MSV</td>
+<td>EST</td>
+<td>MIT</td>
+<td>LT</td>
+<td>MST</td>
+<td>N</td>
+</tr>
+<tr><td>Group 1</td>
+<td>15%</td>
+<td>12%</td>
+<td>33%</td>
+<td>15%</td>
+<td>3%</td>
+<td>8%</td>
+<td>14%</td>
+</tr>
+<tr><td>Group 2</td>
+<td>25%</td>
+<td>-</td>
+<td>50%</td>
+<td>17%</td>
+<td>8%</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr><td>Group 3</td>
+<td>43%</td>
+<td>29%</td>
+<td>14%</td>
+<td>14%</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr><td>Group 4</td>
+<td>50%</td>
+<td>20%</td>
+<td>20%</td>
+<td>10%</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</table>
+
+<p><b>Table 7.</b> Percentages of records from each
+database present in each group.</p>
+</center>
+
+<a name="discussion"><h2>5. Discussion and Conclusions</h2></a>
+
+<p>We have validated the threshold technique for automatic ECG wave boundaries
+detection. This validation has been done with more than 2500 beats from 104
+different records. From the first part of our study we can conclude that, with
+a significant set of annotated beats, evaluation results showed that the
+variability of the mean error committed is comparable to the deviation within
+inter expert deviation measures, showing the TD performance in detecting
+significant points in ECG signals is comparable to experts.</p>
+
+<p>In the second part of our study we have observed that values of mean error
+and standard deviation can give information about some of the detector&#146;s
+errors. Using this information we have that, for the end of T wave (the main
+source of classifying signals) over 71% of the records had a well performed
+automatic wave boundaries detection. The most common error was the one
+involving wrong morphology identification leading to systematic wrong location
+of the T wave (basically in records from the European ST-T Database with 50% of
+records included in this group). It was identified for its high mean (big
+discrepancy with the referee&#146;s detection criterion), and its low standard
+deviation (difference values between manual and automatic annotations had small
+variability).</p>
+
+<p>Finally, we can state that most of the records (over 71% of them) were
+included in group 1, with mean and standard deviation with reasonable values,
+thatis, well detected records. In groups 2, 3 and 4 there is a large percentage
+of records coming mainly from three databases: the Sudden Death Database, the
+European ST-T Database and the Supraventricular Database. This is due to the
+characteristics of the ECG signals recorded from those specific patients, who
+suffer from different heart diseases which cause distortions in ECG signals,
+more clear at the repolarization phase. </p>
+
+<p>In summary, we can conclude that for a single-lead wave boundaries
+detection, the TD method is robust enough to give measures comparable to those
+given by experts. When the SNR of T wave decreases, the error probability is
+higher. This problem can be reduced by selecting the lead which the doctor
+considers more appropriate to measure QT. Also Holters with more than two leads
+(the QT database has only two) will allow more possibilities for measuring and
+even studying the lead variability of the interval duration.</p>
+
+<a name="thanks"><h2>Acknowledgments</h2></a>
+
+<p>This work was supported in part by grant TIC94-0608-C02, from CICYT, Spain.
+</p>
+
+<a name="refs"><h2>References</h2></a>
+
+<p>[1] Laguna P., Caminal P., Jan&eacute; R., Automatic QT Interval Analysis in
+Post-Myocardial Infarction Patients. Journal of Ambulatory Monitoring 1991, 4,
+no. 2, 93-111.</p>
+
+<p>[2] Laguna P. R. G. Mark, Goldberger A., Moody G. B., <a
+href="/physiobank/database/qtdb/doc/">A database for evaluation of algorithms
+for measurement of QT and other waveform intervals in the ECG.</a> Computers in
+Cardiology 1997. (This issue)</p>
+
+<p>[3] Laguna P., Thakor N. V., Caminal P., Jan&eacute; R.,
+Yoon H. R., New Algorithm for QT interval Analysis in 24-hour Holter ECG:
+performance and applications. Medical &amp; Biological Engineering &amp;
+Computing 1990, 28, 67-73.</p>
+
+<p>[4] Moody G. B., Mark R. G., Development and Evaluation
+of a 2-lead ECG Analysis Program. Computers in Cardiology, 1982, 39-44.</p>
+
+<!--
+[Original reference as given in this paper:]
+<p>[5] Zywietz C., Celikag D., Testing Results of Minimum
+Performance criteria for Computerized ECG-Analysis. Computers in Cardiology
+1992, 97-100.</p>
+[Corrected reference follows:]
+-->
+<p>[5] Zywietz C., Celikag D., Testing Results and Derivation of Minimum
+Performance criteria for Computerized ECG-Analysis. Computers in Cardiology
+1991, 97-100.</p>
+
+<p>[6] Laguna P., Jan&eacute; R., Caminal P., Automatic
+Detection of Wave Boundaries in Multilead ECG Signals: Validation with the
+CSE Database. Computers and Biomedical Research, 1994, 27: 45-60.</p>
+
+<p>[7] Moody G. B., ECG Database Applications Guide.
+Harvard University - Massachusetts Institute of Technology, Division of
+Health Sciences and Technology. July 1992,
+<a href="/physiotools/dbag/bxb-1.htm">bxb</a> program, 3-4.</p>
+
+<b>Address for correspondence:</b><br>
+Raimon Jan&eacute;<br>
+Centre de Recerca en Enginyeria Biom&egrave;dica<br>
+C/ Pau Gargallo 5<br>
+08028 Barcelona<br>
+SPAIN<br>
+<br>
+e-mail address: <a href="mailto:jane@creb.upc.es">jane@creb.upc.es</a>
+</body>
+</html>
